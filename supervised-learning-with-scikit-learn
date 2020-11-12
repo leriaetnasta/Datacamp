@@ -5,3 +5,13 @@ sns.countplot(x='missile', hue='party', data=df, palette='RdBu')
 plt.xticks([0,1],['No','Yes'])
 plt.show()
 
+
+# Import KNeighborsClassifier from sklearn.neighbors
+from sklearn.neighbors import KNeighborsClassifier
+y = df['party'].values
+X = df.drop('party', axis=1).values
+knn = KNeighborsClassifier(n_neighbors=6)
+# Fit the classifier to the data
+knn.fit(X,y)
+
+
